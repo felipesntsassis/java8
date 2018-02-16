@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 public class Capitulo2 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Usuario user1 = new Usuario("Felipe Assis", 150);
 		Usuario user2 = new Usuario("Suellen Assis", 120);
@@ -19,23 +20,23 @@ public class Capitulo2 {
 		/*
 		 * Utilizando uma classe que implemente a interface Consumer
 		 */
-		/*Mostrador mostrador = new Mostrador();
-		usuarios.forEach(mostrador);*/
+		Mostrador mostrador = new Mostrador();
+		usuarios.forEach(mostrador);
 		
 		/*
 		 * Exemplo instanciando diretamente
 		 */
-//		usuarios.forEach(new Consumer<Usuario>() {
-//			public void accept(Usuario u) {
-//				System.out.println(u.getNome());
-//			}
-//		});
+		usuarios.forEach(new Consumer<Usuario>() {
+			public void accept(Usuario u) {
+				System.out.println(u.getNome());
+			}
+		});
 		
 		/*
 		 * Lambda
 		 */
-//		Consumer<Usuario> mostrador = (Usuario u) -> { System.out.println(u.getNome()); };
-		Consumer<Usuario> mostrador = u -> { System.out.println(u.getNome()); };
+		Consumer<Usuario> mostrador2 = (Usuario u) -> { System.out.println(u.getNome()); };
+		Consumer<Usuario> mostrador3 = u -> { System.out.println(u.getNome()); };
 		
 		usuarios.forEach(u -> System.out.println(u.getNome()));
 		usuarios.forEach(u -> u.tornaModerador());
@@ -62,7 +63,6 @@ public class Capitulo2 {
 		System.out.println(validadorCEPLambda.valida("81650-040"));
 		
 		Validador<String> outroValidadorCEPLambda = valor -> valor.matches("[0-9]{5}-[0-9]{3}");
-		
 		System.out.println(outroValidadorCEPLambda.valida("19905-520"));
 	}
 }
