@@ -16,6 +16,16 @@ public class Capitulo4 {
 		Consumer<Usuario> imprimeNome = u -> System.out.println(u.getNome());
 		
 		usuarios.forEach(mostraMensagem.andThen(imprimeNome));
+		
+		/*Predicate<Usuario> predicado = new Predicate<Usuario>() {
+			@Override
+			public boolean test(Usuario u) {
+				return u.getPontos() > 160;
+			}
+		};*/
+		
+		usuarios.removeIf(u -> u.getPontos() > 160);
+		usuarios.forEach(u -> System.out.println(u));
 	}
 
 }
