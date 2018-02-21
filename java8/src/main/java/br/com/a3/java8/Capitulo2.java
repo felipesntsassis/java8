@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import br.com.a3.java8.pojo.Usuario;
+
 public class Capitulo2 {
 
 	@SuppressWarnings("unused")

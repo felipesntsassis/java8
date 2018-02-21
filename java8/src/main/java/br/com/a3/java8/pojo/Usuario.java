@@ -1,10 +1,18 @@
-package br.com.a3.java8;
+package br.com.a3.java8.pojo;
 
-class Usuario {
+public class Usuario {
 
 	private String nome;
 	private int pontos;
 	private boolean moderador;
+
+	public Usuario() {
+		
+	}
+
+	public Usuario(String nome) {
+		this.nome = nome;
+	}
 
 	public Usuario(String nome, int pontos) {
 		this.nome = nome;
@@ -34,5 +42,10 @@ class Usuario {
 
 	public boolean isModerador() {
 		return moderador;
+	}
+
+	@Override
+	public String toString() {
+		return "Usuário: " + nome;
 	}
 }

@@ -5,10 +5,13 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 
+import br.com.a3.java8.pojo.Usuario;
+import br.com.a3.java8.utils.CursoUtils;
+
 public class Capitulo5 {
 
 	public static void main(String[] args) {
-		List<Usuario> usuarios = listarUsuarios();
+		List<Usuario> usuarios = CursoUtils.listarUsuarios();
 		
 //		Comparator<Usuario> comparator = (u1, u2) -> u1.getNome().compareTo(u2.getNome());
 //		Collections.sort(usuarios, comparator);
@@ -37,11 +40,7 @@ public class Capitulo5 {
 		usuarios.sort(pontosComparator);
 	}
 
-	private static List<Usuario> listarUsuarios() {
-		Usuario user1 = new Usuario("Felipe Assis", 150);
-		Usuario user2 = new Usuario("Suellen Assis", 120);
-		Usuario user3 = new Usuario("Isabelle Assis", 190);
-		
-		return Arrays.asList(user1, user2, user3);
+	public void printSeparator() {
+		System.out.println("---------------------------------------");
 	}
 }
